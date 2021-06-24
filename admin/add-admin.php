@@ -64,7 +64,9 @@
 // Process the value from form and save it in database
 // Check whether the submit button is clicked or not
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) 
+
+{
     // Button clicked
 
     // Get the data from the form
@@ -82,7 +84,7 @@ if (isset($_POST['submit'])) {
     ";
 
     // Execute query and saving data into database
-    $res = mysqli_query($conn, $sql) or die(mysqli_error());
+    $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
     // Check whether the query is executed and data is inserted 
     if ($res == true) {
