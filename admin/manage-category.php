@@ -13,6 +13,36 @@
             unset($_SESSION['add']); // removing session message
 
         }
+        if (isset($_SESSION['remove_image'])) {
+            echo $_SESSION['remove_image'];
+            unset($_SESSION['remove_image']); // removing session message
+
+        }
+        if (isset($_SESSION['delete'])) {
+            echo $_SESSION['delete'];
+            unset($_SESSION['delete']); // removing session message
+
+        }
+        if (isset($_SESSION['category-not-found'])) {
+            echo $_SESSION['category-not-found'];
+            unset($_SESSION['category-not-found']); // removing session message
+
+        }
+        if (isset($_SESSION['update'])) {
+            echo $_SESSION['update'];
+            unset($_SESSION['update']); // removing session message
+
+        }
+        if (isset($_SESSION['upload'])) {
+            echo $_SESSION['upload'];
+            unset($_SESSION['upload']); // removing session message
+
+        }
+        if (isset($_SESSION['failed-remove'])) {
+            echo $_SESSION['failed-remove'];
+            unset($_SESSION['failed-remove']); // removing session message
+
+        }
 
         ?>
 
@@ -45,7 +75,7 @@
             $sn = 1;
 
             if ($count > 0) {
-                
+
                 while ($row = mysqli_fetch_assoc($res)) {
                     $id = $row['id'];
                     $title = $row['title'];
@@ -59,37 +89,34 @@
 
                         <td><?php echo $sn++; ?></td>
                         <td><?php echo $title; ?></td>
-                       
+
                         <td>
-                        <?php
-                        
-                            if($image_name!="")
-                            {
-                                ?>
-                                
-                                <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name ?>" width="50px">
-                                
-                                <?php
+                            <?php
 
-                            }
-                            else 
-                            {
+                            if ($image_name != "") {
+                            ?>
+
+                                <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name ?>" width="50px">
+
+                            <?php
+
+                            } else {
                                 echo "<div class='error'>No Image Found</div>";
-
                             }
 
 
-                        
-                        
-                        
-                        
-                        ?></td>
-                        
+
+
+
+
+                            ?>
+                        </td>
+
                         <td><?php echo $featured; ?></td>
                         <td><?php echo $active; ?></td>
                         <td>
                             <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>" class="btn-secondary">Update Category</a>
-                            <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>" class="btn-danger">Delete Category</a>
+                            <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Category</a>
                         </td>
 
                     </tr>

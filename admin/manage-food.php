@@ -8,7 +8,7 @@
         <br /> <br />
 
         <!-- Button to Add admin -->
-        <a href="#" class="btn-primary">Add Food</a>
+        <a href="<?php echo SITEURL; ?>admin/add-food.php" class="btn-primary">Add Food</a>
 
         <br /> <br /> <br />
 
