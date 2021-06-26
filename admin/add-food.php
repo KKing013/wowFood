@@ -172,6 +172,28 @@
             } else {
                 $image_name = "";
             }
+
+            $sql2 = "INSERT INTO tbl_food SET
+                title='$title',
+                description='$description',
+                price=$price,
+                image_name='$image_name',
+                category_id=$category,
+                featured='$featured',
+                active='$active'
+            ";
+
+            // Execute query and saving data into database
+            $res2 = mysqli_query($conn, $sql2);
+
+            // Check whether the query is executed and data is inserted 
+            if ($res2 == true) {
+                $_SESSION['add'] = "<div class='success'>Food Added Succesfully</div>";
+                header('location:' . SITEURL . 'admin/manage-food.php');
+            } else {
+                $_SESSION['add'] = "<div class='error'>Failed to Add Food</div>";
+                header('location:' . SITEURL . 'admin/manage-food.php');
+            }
         }
 
         ?>

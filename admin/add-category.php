@@ -129,7 +129,7 @@
         image_name='$image_name',
         featured='$featured',
         active='$active'
-    ";
+        ";
 
             // Execute query and saving data into database
             $res = mysqli_query($conn, $sql);

@@ -113,7 +113,7 @@
 
         </form>
 
-    <?php
+        <?php
 
         if (isset($_POST['submit'])) {
 
@@ -123,65 +123,46 @@
             $featured = $_POST['featured'];
             $active = $_POST['active'];
 
-            if(isset($_FILES['image']['name']))
-            {
+            if (isset($_FILES['image']['name'])) {
                 $image_name = $_FILES['image']['name'];
 
-                if($image_name != "")
-                {
+                if ($image_name != "") {
 
                     $ext = end(explode('.', $image_name));
 
-                    $image_name = "Food_Category_".rand(000, 999) . '.' . $ext;
-                    
+                    $image_name = "Food_Category_" . rand(000, 999) . '.' . $ext;
+
                     $source_path = $_FILES['image']['tmp_name'];
-                    
-                    $destination_path = "../images/category/".$image_name;
-                    
+
+                    $destination_path = "../images/category/" . $image_name;
+
                     $upload = move_uploaded_file($source_path, $destination_path);
 
-                    if($upload == false) 
-                    {
+                    if ($upload == false) {
                         $_SESSION['upload'] = "<div class='error'>Failed to Upload Image</div>";
 
-                        header('location:'. SITEURL . 'admin/manage-category.php');
+                        header('location:' . SITEURL . 'admin/manage-category.php');
 
                         die();
-
-
                     }
-                    if($current_image!="")
-                    {
+                    if ($current_image != "") {
 
 
-                        $remove_path = "../images/category/".$current_image;
+                        $remove_path = "../images/category/" . $current_image;
 
                         $remove = unlink($remove_path);
 
-                        if($remove==false) 
-                        {
+                        if ($remove == false) {
                             $_SESSION['failed-remove'] = "<div class='error'>Failed to Remove Current Image</div>";
                             header('location:' . SITEURL . 'admin/manage-category.php');
                             die();
                         }
-
-                    }   
-
-                }
-                else 
-                {
+                    }
+                } else {
                     $image_name = $current_image;
-
                 }
-
-
-
-
-            }
-            else 
-            {
+            } else {
                 $image_name = $current_image;
-
             }
 
 
@@ -209,7 +190,7 @@
         }
 
 
-    ?>
+        ?>
 
 
 
