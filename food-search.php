@@ -4,11 +4,11 @@
 <section class="food-search text-center">
     <div class="container">
 
-    <?php 
-    
-    $search = $_POST['search'];
-    
-    ?>
+        <?php
+
+        $search = mysqli_real_escape_string($conn, $_POST['search']);
+
+        ?>
 
         <h2>Foods on Your Search <a href="#" class="text-white">"<?php echo $search; ?>"</a></h2>
 
@@ -26,7 +26,7 @@
 
         <?php
 
-        
+
 
         $sql = "SELECT * FROM tbl_food WHERE title LIKE '%$search%' OR description LIKE '%$search%' ";
 
