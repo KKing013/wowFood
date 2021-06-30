@@ -8,6 +8,7 @@
     margin: 0 0;
     padding: 0 0;
     font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 .wrapper{
@@ -25,7 +26,8 @@
 }
 
 .tbl-full{
-    width: 100%;
+    width: 115%;
+    
 }
 .tbl-30{
     width: 30%;
@@ -121,6 +123,14 @@ table tr td{
     margin: 1%;
     padding: 2%;
     float: left;
+    
+}
+.col-4:hover{
+    background-color: #ced6e0;
+}
+
+.row-hover:hover TD{
+    background-color: #ced6e0;
 }
 
 /* CSS for Footer */
@@ -136,4 +146,6 @@ table tr td{
     border: 1px solid grey;
     margin: 10% auto;
     padding: 2%;
+    background-color: #a4b0be;
+    color: white;
 }

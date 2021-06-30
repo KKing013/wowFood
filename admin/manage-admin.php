@@ -77,7 +77,7 @@
                         $username = $rows['username'];
             ?>
 
-                        <tr>
+                        <tr class="row-hover">
 
                             <td><?php echo $sn++; ?></td>
                             <td><?php echo $full_name; ?></td>

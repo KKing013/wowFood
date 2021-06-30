@@ -85,7 +85,7 @@
 
             ?>
 
-                    <tr>
+                    <tr class="row-hover">
 
                         <td><?php echo $sn++; ?></td>
                         <td><?php echo $title; ?></td>

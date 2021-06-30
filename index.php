@@ -114,7 +114,7 @@
                         } else {
                         ?>
 
-                            <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                            <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicken Hawain Pizza" class="img-responsive img-curve">
 
                         <?php
 
@@ -167,8 +167,10 @@
 
     </div>
 
+    
+
     <p class="text-center">
-        <a href="#">See All Foods</a>
+        <a href="<?php echo SITEURL; ?>foods.php">See All Foods</a>
     </p>
 </section>
 <!-- fOOD Menu Section Ends Here -->

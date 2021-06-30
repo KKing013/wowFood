@@ -39,7 +39,7 @@ if (isset($_GET['food_id'])) {
         <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
 
         <form action="" method="POST" class="order">
-            <fieldset>
+            <fieldset class="order-form">
                 <legend>Selected Food</legend>
 
                 <div class="food-menu-img">
@@ -74,7 +74,7 @@ if (isset($_GET['food_id'])) {
 
             </fieldset>
 
-            <fieldset>
+            <fieldset class="order-form">
                 <legend>Delivery Details</legend>
                 <div class="order-label">Full Name</div>
                 <input type="text" name="full-name" placeholder="E.g. Vijay Thapa" class="input-responsive" required>
@@ -90,6 +90,8 @@ if (isset($_GET['food_id'])) {
 
                 <input type="submit" name="submit" value="Confirm Order" class="btn btn-primary">
             </fieldset>
+
+           
 
         </form>
 
@@ -152,5 +154,8 @@ if (isset($_GET['food_id'])) {
     </div>
 </section>
 <!-- fOOD sEARCH Section Ends Here -->
+
+
+
 
 <?php include('partials-front/footer.php'); ?>

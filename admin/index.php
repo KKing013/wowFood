@@ -47,7 +47,7 @@
         ?>
 
         <div class="col-4 text-center">
-            <h1><?php echo $count ?></h1>
+            <h1><?php echo $count2 ?></h1>
             </br>
             Foods
         </div>
@@ -84,6 +84,8 @@
             ?>
 
 
+
+
         <div class="col-4 text-center">
             <h1>$<?php echo $total_revenue; ?></h1>
             </br>
@@ -95,7 +97,10 @@
 
     </div>
 </div>
+
+
 <!-- Main Content Section Ends -->
 
 
 <?php include('partials/footer.php') ?>
+

@@ -35,6 +35,7 @@
         </br></br>
 
         <h1 class="text-center">Login</h1>
+        <br>
 
         <form class="text-center" action="" method="POST">
 
@@ -48,7 +49,7 @@
 
         </form>
 
-        <p class="text-center">Created by - <a href="www.kevinking.com">Kevin King</a></p>
+        <p class="text-center">Created by - <a href="https://github.com/KKing013" target="_blank">Kevin King</a></p>
 
     </div>
 </body>
