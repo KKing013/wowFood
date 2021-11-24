@@ -1,6 +1,6 @@
 <?php include('partials-front/menu.php') ?>
 
-<!-- fOOD sEARCH Section Starts Here -->
+<!-- search start -->
 <section class="food-search text-center">
     <div class="container">
 
@@ -8,25 +8,25 @@
 
         $search = mysqli_real_escape_string($conn, $_POST['search']);
 
+
+
         ?>
 
-        <h2>Foods on Your Search <a href="#" class="text-white">"<?php echo $search; ?>"</a></h2>
+        <h2>Foods in Your Search <a href="#" class="text-white">"<?php echo $search; ?>"</a></h2>
 
     </div>
 </section>
-<!-- fOOD sEARCH Section Ends Here -->
+<!-- search end -->
 
 
 
-<!-- fOOD MEnu Section Starts Here -->
+<!-- menu start -->
 <section class="food-menu">
     <div class="container">
 
-        <h2 class="text-center">Food Menu</h2>
+        <h2 class="text-center">Menu</h2>
 
         <?php
-
-
 
         $sql = "SELECT * FROM tbl_food WHERE title LIKE '%$search%' OR description LIKE '%$search%' ";
 
@@ -83,20 +83,13 @@
         } else {
             echo "<div class='error'>Food Not Found</div>";
         }
-
-
         ?>
 
-
-
-
         <div class="clearfix"></div>
-
-
 
     </div>
 
 </section>
-<!-- fOOD Menu Section Ends Here -->
+<!-- menu end -->
 
 <?php include('partials-front/footer.php') ?>

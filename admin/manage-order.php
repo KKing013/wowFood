@@ -1,6 +1,6 @@
 <?php include('partials/menu.php') ?>
 
-<!-- Main Content Section Starts -->
+<!-- main start -->
 <div class="main-content">
     <div class="wrapper">
         <h1>Manage Order</h1>
@@ -11,11 +11,9 @@
 
         if (isset($_SESSION['update'])) {
             echo $_SESSION['update'];
-            unset($_SESSION['update']); // removing session message
+            unset($_SESSION['update']); 
 
         }
-
-
 
         ?>
 
@@ -135,6 +133,6 @@
 
     </div>
 </div>
-<!-- Main Content Section Ends -->
+<!-- main end -->
 
 <?php include('partials/footer.php') ?>

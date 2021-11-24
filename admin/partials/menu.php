@@ -10,14 +10,14 @@ include('login-check.php');
 
 <head>
 
-    <title>Food Order Website - Home Page</title>
+    <title>wowFood</title>
 
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body>
 
-    <!-- Menu Section Starts -->
+    <!-- menu start -->
     <div class="menu text-center">
         <div class="wrapper">
             <ul>
@@ -30,4 +30,4 @@ include('login-check.php');
             </ul>
         </div>
     </div>
-    <!-- Menu Section Ends -->
+    <!-- menu end -->

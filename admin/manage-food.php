@@ -1,6 +1,6 @@
 <?php include('partials/menu.php') ?>
 
-<!-- Main Content Section Starts -->
+<!-- main start -->
 <div class="main-content">
     <div class="wrapper">
         <h1>Manage Food</h1>
@@ -10,42 +10,42 @@
 
         if (isset($_SESSION['add'])) {
             echo $_SESSION['add'];
-            unset($_SESSION['add']); // removing session message
+            unset($_SESSION['add']);
 
         }
         if (isset($_SESSION['delete'])) {
             echo $_SESSION['delete'];
-            unset($_SESSION['delete']); // removing session message
+            unset($_SESSION['delete']); 
 
         }
         if (isset($_SESSION['remove_image'])) {
             echo $_SESSION['remove_image'];
-            unset($_SESSION['remove_image']); // removing session message
+            unset($_SESSION['remove_image']); 
 
         }
         if (isset($_SESSION['delete'])) {
             echo $_SESSION['delete'];
-            unset($_SESSION['delete']); // removing session message
+            unset($_SESSION['delete']); 
 
         }
         if (isset($_SESSION['food-not-found'])) {
             echo $_SESSION['food-not-found'];
-            unset($_SESSION['food-not-found']); // removing session message
+            unset($_SESSION['food-not-found']); 
 
         }
         if (isset($_SESSION['upload'])) {
             echo $_SESSION['upload'];
-            unset($_SESSION['upload']); // removing session message
+            unset($_SESSION['upload']); 
 
         }
         if (isset($_SESSION['failed-remove'])) {
             echo $_SESSION['failed-remove'];
-            unset($_SESSION['failed-remove']); // removing session message
+            unset($_SESSION['failed-remove']); 
 
         }
         if (isset($_SESSION['update'])) {
             echo $_SESSION['update'];
-            unset($_SESSION['update']); // removing session message
+            unset($_SESSION['update']); 
 
         }
 
@@ -53,7 +53,7 @@
 
         </br> </br>
 
-        <!-- Button to Add admin -->
+        
         <a href="<?php echo SITEURL; ?>admin/add-food.php" class="btn-primary">Add Food</a>
 
         <br /> <br /> <br />
@@ -145,6 +145,6 @@
 
     </div>
 </div>
-<!-- Main Content Section Ends -->
+<!-- main end -->
 
 <?php include('partials/footer.php') ?>

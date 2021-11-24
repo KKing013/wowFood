@@ -21,27 +21,24 @@
 
             $count = mysqli_num_rows($res);
 
-            if ($count == 1) 
-            {
+            if ($count == 1) {
 
-            $row= mysqli_fetch_assoc($res);
-            
-            $food = $row['food'];
-            $price = $row['price'];
-            $qty = $row['qty'];
-            $status = $row['status'];
-            $customer_name = $row['customer_name'];
-            $customer_contact = $row['customer_contact'];
-            $customer_email = $row['customer_email'];
-            $customer_address = $row['customer_address'];
+                $row = mysqli_fetch_assoc($res);
 
-            } 
-            else {
-               
+                $food = $row['food'];
+                $price = $row['price'];
+                $qty = $row['qty'];
+                $status = $row['status'];
+                $customer_name = $row['customer_name'];
+                $customer_contact = $row['customer_contact'];
+                $customer_email = $row['customer_email'];
+                $customer_address = $row['customer_address'];
+            } else {
+
                 header('location:' . SITEURL . 'admin/manage-order.php');
             }
         } else {
-           
+
             header('location:' . SITEURL . 'admin/manage-order.php');
         }
 
@@ -77,13 +74,21 @@
 
                         <select name="status">
 
-                        <option <?php if($status =="Ordered"){echo "selected";} ?> value="Ordered">Ordered</option>
-                        <option <?php if($status =="On Delivery"){echo "selected";} ?> value="On Delivery">On Delivery</option>
-                        <option <?php if($status =="Delivered"){echo "selected";} ?> value="Delivered">Delivered</option>
-                        <option <?php if($status =="Cancelled"){echo "selected";} ?> value="Cancelled">Cancelled</option>
-                    
+                            <option <?php if ($status == "Ordered") {
+                                        echo "selected";
+                                    } ?> value="Ordered">Ordered</option>
+                            <option <?php if ($status == "On Delivery") {
+                                        echo "selected";
+                                    } ?> value="On Delivery">On Delivery</option>
+                            <option <?php if ($status == "Delivered") {
+                                        echo "selected";
+                                    } ?> value="Delivered">Delivered</option>
+                            <option <?php if ($status == "Cancelled") {
+                                        echo "selected";
+                                    } ?> value="Cancelled">Cancelled</option>
+
                         </select>
-                    
+
                     </td>
                 </tr>
 
@@ -105,11 +110,11 @@
                 <tr>
                     <td>Customer Address</td>
                     <td>
-                    <textarea name="customer_address" cols="30" rows="5"> <?php echo $customer_address; ?> </textarea>
+                        <textarea name="customer_address" cols="30" rows="5"> <?php echo $customer_address; ?> </textarea>
                     </td>
                 </tr>
 
-               <tr>
+                <tr>
                     <td colspan="2">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
                         <input type="hidden" name="price" value="<?php echo $price; ?>">
@@ -138,7 +143,7 @@
             $customer_contact = $_POST['customer_contact'];
             $customer_address = $_POST['customer_address'];
 
-            
+
 
             $sql2 = "UPDATE tbl_orders SET
             qty = $qty,

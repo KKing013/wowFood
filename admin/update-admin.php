@@ -1,4 +1,4 @@
-<?php include('partials/menu.php') ?>
+<?php include 'partials/menu.php' ?>
 
 <div class="main-content">
 
@@ -16,24 +16,17 @@
 
         $res = mysqli_query($conn, $sql);
 
-        if ($res == true)
-        {
+        if ($res == true) {
             $count = mysqli_num_rows($res);
 
-            if($count ==1) 
-            {
+            if ($count == 1) {
                 $row = mysqli_fetch_assoc($res);
 
                 $full_name = $row['full_name'];
                 $username = $row['username'];
-
-            }
-            else 
-            {
+            } else {
                 header('location:' . SITEURL . 'admin/manage-admin.php');
-
             }
-
         }
         ?>
 
@@ -53,7 +46,7 @@
 
                 <tr>
                     <td colspan="2">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <input type="hidden" name="id" value="<?php echo $id; ?>">
                         <input type="submit" name="submit" value="Update Admin" class="btn-secondary">
 
                     </td>
@@ -69,10 +62,9 @@
 </div>
 
 
-<?php 
+<?php
 
-if(isset($_POST['submit'])) 
-{
+if (isset($_POST['submit'])) {
 
     $id = $_POST['id'];
     $full_name = $_POST['full_name'];
@@ -86,22 +78,16 @@ if(isset($_POST['submit']))
 
     $res = mysqli_query($conn, $sql);
 
-    if($res == true)
-    {
+    if ($res == true) {
         $_SESSION['update'] = "<div class='success'>Admin Updated Succesfully</div>";
-        header('location:'. SITEURL . 'admin/manage-admin.php');
-    }
-    else 
-    {
+        header('location:' . SITEURL . 'admin/manage-admin.php');
+    } else {
         $_SESSION['update'] = "<div class='error'>Failed to Update Admin</div>";
-        header('location:'. SITEURL . 'admin/manage-admin.php');
+        header('location:' . SITEURL . 'admin/manage-admin.php');
     }
-
-
 }
-
 
 ?>
 
 
-<?php include('partials/footer.php') ?>
+<?php include 'partials/footer.php' ?>

@@ -22,17 +22,17 @@
 
                 <tr>
                     <td>Current Password</td>
-                    <td><input type="password" name="current_password" placeholder="Current Password"></td>
+                    <td><input type="password" name="current_password" placeholder="Current Password" required></td>
                 </tr>
 
                 <tr>
                     <td>New Password</td>
-                    <td><input type="password" name="new_password" placeholder="New Password"></td>
+                    <td><input type="password" name="new_password" placeholder="New Password" required></td>
                 </tr>
 
                 <tr>
                     <td>Confirm Password</td>
-                    <td><input type="password" name="confirm_password" placeholder="Confirm Password"></td>
+                    <td><input type="password" name="confirm_password" placeholder="Confirm Password" required></td>
                 </tr>
 
                 <tr>

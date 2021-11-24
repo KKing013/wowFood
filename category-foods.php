@@ -17,27 +17,24 @@ if (isset($_GET['category_id'])) {
     header('location:' . SITEURL);
 }
 
-
-
-
 ?>
 
-<!-- fOOD sEARCH Section Starts Here -->
+<!-- search start -->
 <section class="food-search text-center">
     <div class="container">
 
-        <h2>Foods on <a href="#" class="text-white">"<?php echo $category_title; ?>"</a></h2>
+        <h2>Foods with <a href="#" class="text-white">"<?php echo $category_title; ?>"</a></h2>
 
     </div>
 </section>
-<!-- fOOD sEARCH Section Ends Here -->
+<!-- search end -->
 
 
 
-<!-- fOOD MEnu Section Starts Here -->
+<!-- menu start -->
 <section class="food-menu">
     <div class="container">
-        <h2 class="text-center">Food Menu</h2>
+        <h2 class="text-center">Menu</h2>
 
         <?php
 
@@ -105,6 +102,6 @@ if (isset($_GET['category_id'])) {
     </div>
 
 </section>
-<!-- fOOD Menu Section Ends Here -->
+<!-- menu end -->
 
 <?php include('partials-front/footer.php') ?>

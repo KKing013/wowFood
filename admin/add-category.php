@@ -9,12 +9,12 @@
         <?php
         if (isset($_SESSION['add'])) {
             echo $_SESSION['add'];
-            unset($_SESSION['add']); // removing session message
+            unset($_SESSION['add']); 
 
         }
         if (isset($_SESSION['upload'])) {
             echo $_SESSION['upload'];
-            unset($_SESSION['upload']); // removing session message
+            unset($_SESSION['upload']); 
 
         }
 
@@ -68,10 +68,6 @@
 
         if (isset($_POST['submit'])) {
 
-            // Button clicked
-
-            // Get the data from the form
-
             $title = $_POST['title'];
 
             if (isset($_POST['featured'])) {
@@ -120,10 +116,6 @@
                 
             }
 
-
-
-            // SQL query to save data into database
-
         $sql = "INSERT INTO tbl_category SET
         title='$title',
         image_name='$image_name',
@@ -131,10 +123,10 @@
         active='$active'
         ";
 
-            // Execute query and saving data into database
+          
             $res = mysqli_query($conn, $sql);
 
-            // Check whether the query is executed and data is inserted 
+         
             if ($res == true) {
                 $_SESSION['add'] = "<div class='success'>Category Added Succesfully</div>";
                 header('location:' . SITEURL . 'admin/manage-category.php');

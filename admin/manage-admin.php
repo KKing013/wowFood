@@ -1,6 +1,6 @@
 <?php include('partials/menu.php') ?>
 
-<!-- Main Content Section Starts -->
+<!-- main start -->
 <div class="main-content">
     <div class="wrapper">
         <h1>Manage Admin</h1>
@@ -10,34 +10,34 @@
         <?php
         if (isset($_SESSION['add'])) {
             echo $_SESSION['add'];
-            unset($_SESSION['add']); // removing session message
+            unset($_SESSION['add']); 
 
         }
 
         if (isset($_SESSION['delete'])) {
             echo $_SESSION['delete'];
-            unset($_SESSION['delete']); // removing session message
+            unset($_SESSION['delete']); 
 
         }
 
         if (isset($_SESSION['update'])) {
             echo $_SESSION['update'];
-            unset($_SESSION['update']); // removing session message
+            unset($_SESSION['update']); 
 
         }
         if (isset($_SESSION['user-not-found'])) {
             echo $_SESSION['user-not-found'];
-            unset($_SESSION['user-not-found']); // removing session message
+            unset($_SESSION['user-not-found']); 
 
         }
         if (isset($_SESSION['password-not-match'])) {
             echo $_SESSION['password-not-match'];
-            unset($_SESSION['password-not-match']); // removing session message
+            unset($_SESSION['password-not-match']); 
 
         }
         if (isset($_SESSION['change-password'])) {
             echo $_SESSION['change-password'];
-            unset($_SESSION['change-password']); // removing session message
+            unset($_SESSION['change-password']); 
 
         }
 
@@ -45,7 +45,7 @@
 
         </br></br></br>
 
-        <!-- Button to Add admin -->
+       
         <a href="add-admin.php" class="btn-primary">Add Admin</a>
 
         <br /> <br /> <br />
@@ -95,6 +95,7 @@
 
                     }
                 } else {
+                    
                 }
             }
 
@@ -107,6 +108,6 @@
 
     </div>
 </div>
-<!-- Main Content Section Ends -->
+<!-- main end -->
 
 <?php include('partials/footer.php') ?>

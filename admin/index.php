@@ -1,6 +1,6 @@
 <?php include('partials/menu.php') ?>
 
-<!-- Main Content Section Starts -->
+<!-- main start -->
 <div class="main-content">
     <div class="wrapper">
         <h1>Dashboard</h1>
@@ -11,7 +11,7 @@
 
         if (isset($_SESSION['login'])) {
             echo $_SESSION['login'];
-            unset($_SESSION['login']); // removing session message
+            unset($_SESSION['login']); 
 
         }
 
@@ -83,9 +83,6 @@
             
             ?>
 
-
-
-
         <div class="col-4 text-center">
             <h1>$<?php echo $total_revenue; ?></h1>
             </br>
@@ -99,7 +96,7 @@
 </div>
 
 
-<!-- Main Content Section Ends -->
+<!-- main end -->
 
 
 <?php include('partials/footer.php') ?>

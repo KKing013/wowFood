@@ -2,7 +2,7 @@
 
 
 
-    <!-- CAtegories Section Starts Here -->
+    <!-- categories start -->
     <section class="categories">
         <div class="container">
             <h2 class="text-center">Explore Foods</h2>
@@ -71,7 +71,7 @@
             <div class="clearfix"></div>
         </div>
     </section>
-    <!-- Categories Section Ends Here -->
+    <!-- categories end -->
 
 
    

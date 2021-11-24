@@ -1,11 +1,10 @@
 <?php include('../config/constants.php'); ?>
 
-
 <html>
 
 <head>
 
-    <title>Login - Food Order System</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../css/admin.css">
 
 </head>
@@ -19,13 +18,13 @@
 
         if (isset($_SESSION['login'])) {
             echo $_SESSION['login'];
-            unset($_SESSION['login']); // removing session message
+            unset($_SESSION['login']); 
 
         }
 
         if (isset($_SESSION['no-login-message'])) {
             echo $_SESSION['no-login-message'];
-            unset($_SESSION['no-login-message']); // removing session message
+            unset($_SESSION['no-login-message']); 
 
         }
 
@@ -82,7 +81,7 @@ if (isset($_POST['submit'])) {
 
         $_SESSION['login'] = "<div class='error text-center'>Login Failed</div>";
 
-        // header('location:' . SITEURL . 'admin/');
+       
     }
 }
 

@@ -9,7 +9,7 @@
         <?php
         if (isset($_SESSION['add'])) {
             echo $_SESSION['add'];
-            unset($_SESSION['add']); // removing session message
+            unset($_SESSION['add']); 
 
         }
 
@@ -21,17 +21,17 @@
 
                 <tr>
                     <td>Full Name</td>
-                    <td><input type="text" name="full_name" placeholder="Enter your name"></td>
+                    <td><input type="text" name="full_name" placeholder="Enter your name" required></td>
                 </tr>
 
                 <tr>
                     <td>User Name</td>
-                    <td><input type="text" name="username" placeholder="Enter your username"></td>
+                    <td><input type="text" name="username" placeholder="Enter your username" required></td>
                 </tr>
 
                 <tr>
                     <td>Password</td>
-                    <td><input type="password" name="password" placeholder="Enter your password"></td>
+                    <td><input type="password" name="password" placeholder="Enter your password" required></td>
                 </tr>
 
                 <tr>
@@ -60,22 +60,11 @@
 
 <?php
 
-
-// Process the value from form and save it in database
-// Check whether the submit button is clicked or not
-
-if (isset($_POST['submit'])) 
-
-{
-    // Button clicked
-
-    // Get the data from the form
-
+if (isset($_POST['submit'])) {
+  
     $full_name = $_POST['full_name'];
     $username = $_POST['username'];
-    $password = md5($_POST['password']); //Password Encryption with MD5
-
-    // SQL query to save data into database
+    $password = md5($_POST['password']); 
 
     $sql = "INSERT INTO tbl_admin SET
         full_name='$full_name',
@@ -83,10 +72,9 @@ if (isset($_POST['submit']))
         password='$password'
     ";
 
-    // Execute query and saving data into database
     $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
-    // Check whether the query is executed and data is inserted 
+    
     if ($res == true) {
         $_SESSION['add'] = "<div class='success'>Admin Added Succesfully</div>";
         header('location:' . SITEURL . 'admin/manage-admin.php');

@@ -23,6 +23,7 @@
 
             if ($count == 1) {
                 $row = mysqli_fetch_assoc($res);
+                
                 $title = $row['title'];
                 $current_image = $row['image_name'];
                 $featured = $row['featured'];
@@ -124,6 +125,7 @@
             $active = $_POST['active'];
 
             if (isset($_FILES['image']['name'])) {
+                
                 $image_name = $_FILES['image']['name'];
 
                 if ($image_name != "") {
@@ -147,8 +149,7 @@
                     }
                     if ($current_image != "") {
 
-
-                        $remove_path = "../images/category/" . $current_image;
+                         $remove_path = "../images/category/" . $current_image;
 
                         $remove = unlink($remove_path);
 
@@ -192,18 +193,8 @@
 
         ?>
 
-
-
-
-
-
-
     </div>
 
 </div>
-
-
-
-
 
 <?php include('partials/footer.php') ?>

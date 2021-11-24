@@ -1,6 +1,6 @@
 <?php include('partials-front/menu.php') ?>
 
-<!-- fOOD sEARCH Section Starts Here -->
+<!-- search start -->
 <section class="food-search text-center">
     <div class="container">
 
@@ -12,18 +12,18 @@
 
     </div>
 </section>
-<!-- fOOD sEARCH Section Ends Here -->
+<!-- search end -->
 
 <?php
-        if (isset($_SESSION['order'])) {
-            echo $_SESSION['order'];
-            unset($_SESSION['order']); // removing session message
+if (isset($_SESSION['order'])) {
+    echo $_SESSION['order'];
+    unset($_SESSION['order']); 
 
-        }
+}
 
 ?>
 
-<!-- CAtegories Section Starts Here -->
+<!-- categories start -->
 <section class="categories">
     <div class="container">
         <h2 class="text-center">Explore Foods</h2>
@@ -78,12 +78,12 @@
         <div class="clearfix"></div>
     </div>
 </section>
-<!-- Categories Section Ends Here -->
+<!-- categories end -->
 
-<!-- fOOD MEnu Section Starts Here -->
+<!-- menu start -->
 <section class="food-menu">
     <div class="container">
-        <h2 class="text-center">Food Menu</h2>
+        <h2 class="text-center">Menu</h2>
 
         <?php
 
@@ -103,8 +103,6 @@
                 $image_name = $row['image_name'];
 
         ?>
-
-
                 <div class="food-menu-box">
                     <div class="food-menu-img">
 
@@ -114,7 +112,7 @@
                         } else {
                         ?>
 
-                            <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicken Hawain Pizza" class="img-responsive img-curve">
+                            <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="food" class="img-responsive img-curve">
 
                         <?php
 
@@ -137,13 +135,6 @@
                     </div>
                 </div>
 
-
-
-
-
-
-
-
         <?php
 
 
@@ -152,27 +143,16 @@
             echo "<div class='error'>Food Not Added</div>";
         }
 
-
-
         ?>
-
-
-
-
-
 
         <div class="clearfix"></div>
 
-
-
     </div>
-
-    
 
     <p class="text-center">
         <a href="<?php echo SITEURL; ?>foods.php">See All Foods</a>
     </p>
 </section>
-<!-- fOOD Menu Section Ends Here -->
+<!-- menu end -->
 
 <?php include('partials-front/footer.php') ?>

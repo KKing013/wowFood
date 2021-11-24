@@ -1,4 +1,4 @@
-<?php include('partials/menu.php') ?>
+<?php include 'partials/menu.php' ?>
 
 <div class="main-content">
 
@@ -10,7 +10,6 @@
 
         <?php
 
-
         if (isset($_GET['id'])) {
 
             $id = $_GET['id'];
@@ -19,29 +18,27 @@
 
             $res2 = mysqli_query($conn, $sql2);
 
-            // $count = mysqli_num_rows($res2);
+            $count = mysqli_num_rows($res2);
 
-            // if ($count == 1) {
-            $row2 = mysqli_fetch_assoc($res2);
-            $title = $row2['title'];
-            $description = $row2['description'];
-            $price = $row2['price'];
-            $current_image = $row2['image_name'];
-            $current_category = $row2['category_id'];
-            $featured = $row2['featured'];
-            $active = $row2['active'];
+            if ($count == 1) {
 
-            // } 
-            // else {
-            //     $_SESSION['food-not-found'] = "<div class='error'>Food Not Found</div>";
-            //     header('location:' . SITEURL . 'admin/manage-food.php');
-            // }
+                $row2 = mysqli_fetch_assoc($res2);
+
+                $title = $row2['title'];
+                $description = $row2['description'];
+                $price = $row2['price'];
+                $current_image = $row2['image_name'];
+                $current_category = $row2['category_id'];
+                $featured = $row2['featured'];
+                $active = $row2['active'];
+            } else {
+                $_SESSION['food-not-found'] = "<div class='error'>Food Not Found</div>";
+                header('location:' . SITEURL . 'admin/manage-food.php');
+            }
         } else {
             $_SESSION['food-not-found'] = "<div class='error'>Food Not Found</div>";
             header('location:' . SITEURL . 'admin/manage-food.php');
         }
-
-
 
         ?>
 
@@ -105,21 +102,21 @@
 
                             if ($count > 0) {
                                 while ($row = mysqli_fetch_assoc($res)) {
+
                                     $category_title = $row['title'];
                                     $category_id = $row['id'];
 
-                                    // echo "<option value='$category_id'>$category_title</option>";
+
                             ?>
                                     <option <?php if ($current_category == $category_id) {
                                                 echo "selected";
-                                            } ?> value="<?php echo $category_id; ?>"><?php echo $category_title; ?></option>
+                                            } ?> value="<?php echo $category_id; ?>"><?php echo $category_title; ?>
+                                    </option>
                             <?php
                                 }
                             } else {
                                 echo "<option value='0'>Category Not Available</option>";
                             }
-
-
 
                             ?>
                         </select>
@@ -178,7 +175,7 @@
             $active = $_POST['active'];
 
             if (isset($_FILES['image']['name'])) {
-                
+
                 $image_name = $_FILES['image']['name'];
 
                 if ($image_name != "") {
@@ -202,7 +199,6 @@
                     }
                     if ($current_image != "") {
 
-
                         $remove_path = "../images/food/" . $current_image;
 
                         $remove = unlink($remove_path);
@@ -213,22 +209,18 @@
                             die();
                         }
                     }
-                } 
-                else 
-                {
+                } else {
                     $image_name = $current_image;
                 }
-        } 
-        else 
-        {
-            $image_name = $current_image;
-        }
+            } else {
+                $image_name = $current_image;
+            }
 
             $sql3 = "UPDATE tbl_food SET
             title = '$title',
             description = '$description',
             price = $price,
-            image_name = '$image_name', 
+            image_name = '$image_name',
             category_id = $category,
             featured = '$featured',
             active = '$active'
@@ -238,7 +230,7 @@
 
             $res3 = mysqli_query($conn, $sql3);
 
-            if ($res3== true) {
+            if ($res3 == true) {
                 $_SESSION['update'] = "<div class='success'>Food Updated Succesfully</div>";
                 header('location:' . SITEURL . 'admin/manage-food.php');
             } else {
@@ -246,7 +238,6 @@
                 header('location:' . SITEURL . 'admin/manage-food.php');
             }
         }
-
 
         ?>
 
@@ -261,4 +252,4 @@
 
 
 
-<?php include('partials/footer.php') ?>
+<?php include 'partials/footer.php' ?>
