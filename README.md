@@ -1,5 +1,5 @@
 # wowFood
-Restaurant website with admin and order functionality
+Vanilla PHP restaurant website with admin and order functionality
 
     Food with categories displayed in menu 
     Search for food in search bar
